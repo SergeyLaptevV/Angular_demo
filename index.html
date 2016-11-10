@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Demo</title>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+    <link rel="stylesheet" href="app/css/bundle.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" id="myPage" data-spy="scroll">
+<video autoplay loop muted class="bgvideo" id="bgvideo">
+    <source src="video/fon.mp4" type="video/mp4">
+</video>
+    <!--Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div id="navs" class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#demonstration">DEMONSTRATION</a></li>
+                    <li><a href="#recreation">RECREATION</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Container (Logo company) -->
+    <div ng-include="'templates/logo.html'">
+    </div>
+
+    <!-- Container (About Section) -->
+    <div ng-include="'templates/about.html'">
+    </div>
+
+    <!-- Container (Demonstration Section) -->
+    <div ng-include="'templates/demonstration.html'">
+    </div>
+
+    <!-- Container (Recreation Section) -->
+    <div ng-include="'templates/recreation.html'">
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div ng-include="'templates/contact.html'">
+    </div>
+
+
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+    </footer>
+</body>
+    <script>
+        $(document).ready(function(){
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            });
+
+
+        })
+    </script>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope, $http){
+            $http.get("DataFolder/data.json").success(function(response){
+                $scope.items = response;
+                });
+            $scope.orderByMe = function(x) {
+                $scope.myOrderBy = x;
+            };
+        });
+        /*
+
+        */
+        app.controller("secondCtrl", function($scope,$http){
+            $http.get("http://jsonplaceholder.typicode.com/photos").success(function(response){
+                $scope.items = response;
+            });
+            $scope.test = false;
+            $scope.employees = true;
+
+            console.log("test");
+            /*
+             $scope.data=[];
+             */
+            $scope.data=[
+                {sname:"Conrad", fname:"Wilkerson",tl:"8333-333-33-33",gend:"male",ag:"18"},
+                {sname:"Michael", fname:"Hart",tl:"8555-555-55-55",gend:"male",ag:"42"},
+                {sname:"Solomon", fname:"Pierce",tl:"8999-999-99-99",gend:"male",ag:"30"}
+            ];
+            $scope.addNewUser = function () {
+                $scope.data.push({
+                    sname: $scope.firstName,
+                    fname: $scope.lastName,
+                    tl: $scope.phone,
+                    gend:$scope.gender,
+                    ag:$scope.age
+                });
+                $scope.firstName = "";
+                $scope.lastName = "";
+                $scope.phone = "";
+                $scope.gender = "";
+                $scope.age = "";
+            };
+
+            $scope.removeItem = function (x) {
+                $scope.data.splice(x, 1);
+            };
+            $scope.orderByMe = function(x) {
+                $scope.myOrderBy = x;
+            }
+
+
+
+
+        });
+
+        app.directive("email", function() {
+            return {
+                template : "<img src='img/icons/email.png' alt='email'>"
+
+            };
+        });
+        app.directive("phone", function() {
+            return {
+                template : "<img src='img/icons/phone.png' alt='phone'>"
+
+            };
+        });
+        app.directive("skype", function() {
+            return {
+                template : "<img src='img/icons/skype.png' alt='skype'>"
+
+            };
+        });
+
+
+
+    </script>
+</html>

@@ -1,0 +1,293 @@
+<div id="demonstration" class="container-fluid text-center jumbotron">
+    <h2>
+        Demonstration
+    </h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading" style="color:#f4511e;background-color: #74d7f4">Panel Heading</div>
+                <table class="table table-border">
+
+                    <tr>
+                        <th> № </th>
+                        <th ng-click="orderByMe('name')">NAME<br/>sort(click me)</th>
+                        <th ng-click="orderByMe('username')">USERNAME<br/>sort(click me)</th>
+                    </tr>
+                    <tr ng-repeat="item in items | orderBy:myOrderBy">
+                        <td>{{$index + 1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.username}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading" style="color:#f4511e;background-color: #74d7f4">Panel Heading</div>
+                <table class="table table-border">
+                    <thead>
+                    <tr>
+                        <th>
+                            <select ng-model="dataH" ng-options="x.name for x in items">
+                            </select>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>
+                            NAME
+                        </th>
+                        <td>
+                            {{dataH.name}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            USERNAME
+                        </th>
+                        <td>
+                            {{dataH.username}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            PRICE
+                        </th>
+                        <td>
+                            {{dataH.price}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            ADDRESS :
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>STREET</td>
+                        <td>{{dataH.address.street}}</td>
+                    </tr>
+                    <tr>
+                        <td>SUITE</td>
+                        <td>{{dataH.address.suite}}</td>
+                    </tr>
+                    <tr>
+                        <td>CITY</td>
+                        <td>{{dataH.address.city}}</td>
+                    </tr>
+                    <tr>
+                        <td>ZIPCODE</td>
+                        <td>{{dataH.address.zipcode}}</td>
+                    </tr>
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-controller="secondCtrl">
+        <div class="col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading" style="color:#f4511e;background-color: #74d7f4">Panel Heading</div>
+                <div class="tab-content">
+                    <div id="first" class="tab-pane fade in active">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="second" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 10">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="third" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 20">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="fourth" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 30">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="fifth" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 40">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="sixth" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 50">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="seventh" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 60">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="eighth" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 70">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="ninth" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 80">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="tenth" class="tab-pane fade">
+                        <table class="table">
+                            <tr ng-repeat="item in items | limitTo : 10 : 90">
+                                <td>
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <ul class="pagination">
+                    <li class="active"><a data-toggle="tab" href="#first">1</a></li>
+                    <li><a data-toggle="tab" href="#second">2</a></li>
+                    <li><a data-toggle="tab" href="#third">3</a></li>
+                    <li><a data-toggle="tab" href="#fourth">4</a></li>
+                    <li><a data-toggle="tab" href="#fifth">5</a></li>
+                    <li><a data-toggle="tab" href="#sixth">6</a></li>
+                    <li><a data-toggle="tab" href="#seventh">7</a></li>
+                    <li><a data-toggle="tab" href="#eighth">8</a></li>
+                    <li><a data-toggle="tab" href="#ninth">9</a></li>
+                    <li><a data-toggle="tab" href="#tenth">10</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default text-center">
+                <div class="panel-heading" style="color:#f4511e;background-color: #74d7f4">Panel Heading</div>
+                <div class="container">
+                    <!--Form to fill-->
+                    <form name="myForm">
+                                <div class="well">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input name="firstName" type="text" class="form-control" placeholder="First Name"
+                                               required ng-model="firstName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input name="lastName" type="text" class="form-control" placeholder="Last Name"
+                                               required ng-model="lastName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input name="phone" type="tel" title="8xxx-xxx-xx-xx" class="form-control"
+                                               placeholder="8xxx-xxx-xx-xx" required ng-model="phone"
+                                               pattern="8[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Gender<br/></label>
+                                        <input type="radio" name='type' ng-model="gender" value="male" required/>male
+                                        <input type="radio" name='type' ng-model="gender" value="female" required/>female<br />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <input name="Age" type="number" min="18" class="form-control" placeholder="Age"
+                                               required ng-model="age">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block" ng-click="addNewUser()"
+                                            ng-disabled="myForm.$invalid">
+                                        add user
+                                    </button>
+                                </div>
+                            </form>
+
+                    <!--Results table-->
+                    <table class="user" class="table table-border table-striped">
+                        <thead>
+                                <tr class="info">
+                                    <th>
+                                        №
+                                    </th>
+                                    <th ng-click="orderByMe('fname')">
+                                        First Name
+                                        <br/>
+                                    </th>
+                                    <th ng-click="orderByMe('lname')">
+                                        Last Name
+                                    </th>
+                                    <th ng-click="orderByMe('tl')">
+                                        Phone
+                                    </th>
+                                    <th ng-click="orderByMe('gend')">
+                                        Gender
+                                    </th>
+                                    <th ng-click="orderByMe('ag')">
+                                        Age
+                                    </th>
+                                    <th >
+                                        &nbsp;
+                                    </th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr ng-repeat="x in data | orderBy:myOrderBy">
+                                    <td>{{$index +1}}</td>
+                                    <td>{{x.sname}}</td>
+                                    <td>{{x.fname}}</td>
+                                    <td>{{x.tl}}</td>
+                                    <td>{{x.gend}}</td>
+                                    <td>{{x.ag}}</td>
+                                    <td>
+                                        <button class="btn btn-danger" ng-click="removeItem($index)">Delete</button>
+                                    </td>
+                                </tr>
+                        </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>

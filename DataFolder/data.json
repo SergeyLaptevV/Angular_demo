@@ -1,0 +1,86 @@
+﻿[
+    {   "name": "Leanne Graham",
+        "price": 1.20 ,
+        "username":"Clementina",
+        "address": {
+            "street": "Skiles Walks",
+            "suite": "Suite 351",
+            "city": "Roscoeview",
+            "zipcode": "33263"
+        }},
+
+
+    { "name": "Ervin Howell",
+        "price": 2.42,
+        "username":"DuBuque",
+        "address": {
+            "street": "Walks Skiles ",
+            "suite": "Hruite 23",
+            "city": "Rosco",
+            "zipcode": "123263"
+        }},
+
+    { "name": "Patricia Lebsack",
+        "price": 2.02,
+        "username":"Bret",
+        "address": {
+            "street": "Dayna Park",
+            "suite": "Suite 449",
+            "city": "Bartholomebury",
+            "zipcode": "76495-3109"
+
+        }},
+
+    { "name": "Chelsey Dietrich",
+        "price": 20.45,
+        "username":"Kamren",
+        "address": {
+            "street": "Crossing",
+            "suite": "Apt. 950",
+            "city": "Christy",
+            "zipcode": "23505"
+
+        }},
+
+    { "name": "Mrs. Dennis Schulist",
+        "price": 17.93,
+        "username":"Leopold",
+        "address": {
+            "street": "Norberto ",
+            "suite": "Apcut. 1452",
+            "city": "South",
+            "zipcode": "1337"
+
+        }},
+
+    { "name": "Kurtis Weissnat",
+        "price": 14.01,
+        "username":"Maxime",
+        "address": {
+            "street": "Dayna Park",
+            "suite": "Suite 44",
+            "city": "Bartholy",
+            "zipcode": "76495"
+
+        }},
+
+    { "name": "Nicholas Runolfsdottir V",
+        "price": 11.34,
+        "username":"Delphine",
+        "address": {
+            "street": "Dayna Park",
+            "suite": "Suytr 4259",
+            "city": "Bomebury",
+            "zipcode": "3109"
+        }},
+
+    { "name": "Glenna Reichert",
+        "price": 12.93,
+        "username":"Stanton",
+        "address": {
+            "street": "Belue",
+            "suite": "Truse 12",
+            "city": "Torinye",
+            "zipcode": "132132-56"
+        }}
+]

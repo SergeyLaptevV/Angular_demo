@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    margin:auto;
+    max-width: 1000px;
+    min-width: 300px;
+    background-size: cover;
+}
+.bgvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+}
+#navs{
+    margin:auto;
+    background-color:  #69bcd7;
+    max-width: 1000px;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+    border-radius: 25px;
+}
+
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.main{
+    height: 400px;
+    background-color: #74d7f4;
+    padding: 80px 10px 10px 10px;
+    color: white;
+    overflow:auto;
+}
+.user{
+    overflow:auto;
+}
+table th {
+    text-align: center;
+}
+
+.panel-default{
+    color: #a9a9a9;
+
+}
+
+.item{
+    padding:35px 100px;
+    background-color:  #74d7f4;
+}
+footer{
+    background-color: #74d7f4;
+    color: #f4511e;
+    text-align:center;
+}
+h2{
+    color: #f4511e;
+}
+
+form .ng-pristine {
+    border: 1px dotted red;
+}
+input.ng-invalid.ng-dirty {
+    background-color:pink;
+}
+input.ng-valid.ng-dirty {
+    background-color:lightgreen;
+}
